@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+/* Cree una aplicación React usando create-react-app o una configuración similar.
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+Utilice componentes de clase para crear la aplicación.
+
+Implemente una lista de tareas pendientes con las siguientes características:
+
+Añade tareas.
+Mostrar una lista de tareas.
+Marque las tareas como completadas o incompletas.
+Eliminar tareas.
+Demostrar el uso de métodos de ciclo de vida de componentes de
+clase (por ejemplo, componenteDidMount, componenteDidUpdate,
+componenteWillUnmount) para gestionar el estado y los efectos secundarios. */
+
+//Desarollo//
+
+import "./App.css";
+
+import TaskList from "./components/pages/TaskList/TaskList";
+
+import React, { Component } from "react";
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="">
+        <TaskList />
+      </div>
+    );
+  }
 }
-
-export default App;
