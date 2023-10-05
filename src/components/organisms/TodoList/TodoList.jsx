@@ -9,31 +9,36 @@ export default class TodoList extends Component {
     this.state = {
       tasks: [],
       newTask: "",
-      completedTask: false,
     };
 
     //Cambio del Imput:Text
-    this.inputChange = (e) => {
-      this.setState({ newTask: e.target.value });
+    this.inputChange = (event) => {
+      this.setState({ newTask: event.target.value });
     };
 
-    //Cambio del Imput:CheckBox
-    /* this.completedTask = (index) => {
-      let newTasks = [...this.state.tasks];
-
-      this.setState({ tasks: newTasks });
-    };
- */
     //Agregar una nueva tarea
     this.addTask = () => {
+      console.log("Aded Task: ");
       this.setState((prevState) => ({
-        tasks: [...prevState.tasks, this.state.newTask],
+        tasks: [
+          ...prevState.tasks,
+          { task: this.state.newTask, completedTask: false },
+        ],
         newTask: "",
       }));
     };
 
+    //Completar tarea
+    this.complete = (index) => {
+      console.log("Completed Task: ", index);
+      let newTasks = [...this.state.tasks];
+      newTasks[index].completedTask = !newTasks[index].completedTask;
+      this.setState({ tasks: newTasks });
+    };
+
     //Eliminar una tarea
     this.dellTask = (index) => {
+      console.log("Deleted Task: ", index);
       let newTasks = [...this.state.tasks];
       newTasks.splice(index, 1);
       this.setState({ tasks: newTasks });
@@ -54,11 +59,14 @@ export default class TodoList extends Component {
         <ul>
           {this.state.tasks.map((task, index) => (
             <li key={index}>
-              <CheckBox onChange={() => this.completedTask(index)} />
-              {task}
+              <CheckBox
+                checked={task.completedTask}
+                onChange={() => this.complete(index)}
+              />
+              {task.task}
               <Button
                 onClick={() => this.dellTask(index)}
-                disabled={!this.state.completedTask}
+                disabled={!task.completedTask}
               >
                 Dell
               </Button>
