@@ -1,7 +1,8 @@
+import "./CheckBox.css";
 import React, { Component } from "react";
 
 export default class CheckBox extends Component {
   render() {
-    return <input type="checkbox" {...this.props} />;
+    return <input className="checkbox" type="checkbox" {...this.props} />;
   }
 }

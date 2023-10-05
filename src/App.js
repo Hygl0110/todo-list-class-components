@@ -12,12 +12,8 @@ Demostrar el uso de métodos de ciclo de vida de componentes de
 clase (por ejemplo, componenteDidMount, componenteDidUpdate,
 componenteWillUnmount) para gestionar el estado y los efectos secundarios. */
 
-//Desarollo//
-
 import "./App.css";
-
 import Paje from "./components/pages/Page/Paje";
-
 import React, { Component } from "react";
 
 export default class App extends Component {
