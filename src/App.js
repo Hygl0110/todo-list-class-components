@@ -16,15 +16,15 @@ componenteWillUnmount) para gestionar el estado y los efectos secundarios. */
 
 import "./App.css";
 
-import TaskList from "./components/pages/TaskList/TaskList";
+import Paje from "./components/pages/Page/Paje";
 
 import React, { Component } from "react";
 
 export default class App extends Component {
   render() {
     return (
-      <div className="">
-        <TaskList />
+      <div className="App">
+        <Paje />
       </div>
     );
   }

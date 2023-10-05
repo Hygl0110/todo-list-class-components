@@ -1,24 +1,25 @@
-import "./TaskList.css";
-
 import React, { Component } from "react";
+import TodoList from "../../organisms/TodoList/TodoList";
 
-export default class TaskList extends Component {
+export default class Paje extends Component {
   render() {
     return (
-      <div className="taskList">
+      <div className="paje">
         {/* Header */}
         <div className="header">
-          <h1>Task-List</h1>
+          <h3>Header</h3>
+          <h1>To-do List</h1>
         </div>
 
         {/* Main */}
         <div className="main">
-          <h2>Main</h2>
+          <h3>main</h3>
+          <TodoList />
         </div>
 
         {/* Footer */}
         <div className="footer">
-          <h3>Footer</h3>
+          <h3>footer</h3>
         </div>
       </div>
     );
