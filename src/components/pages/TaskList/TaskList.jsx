@@ -1,7 +1,5 @@
 import "./TaskList.css";
 
-import Tasks from "../../organisms/Tasks/Tasks";
-
 import React, { Component } from "react";
 
 export default class TaskList extends Component {
@@ -16,7 +14,6 @@ export default class TaskList extends Component {
         {/* Main */}
         <div className="main">
           <h2>Main</h2>
-          <Tasks></Tasks>
         </div>
 
         {/* Footer */}
